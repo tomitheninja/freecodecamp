@@ -1,0 +1,26 @@
+{
+  "author": "tomitheninja",
+  "description": "asd",
+  "keywords": [
+    "a",
+    "freecodecamp"
+  ],
+  "license": "MIT",
+  "version": "0.0.2",
+  "name": "fcc-learn-npm-package-json",
+  "dependencies": {
+    "express": "^4.16.4",
+    "moment": "2.10.2"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "8.11.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/tomitheninja-freecodecamp/npm.git"
+  }
+}
