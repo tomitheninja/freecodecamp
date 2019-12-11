@@ -1,17 +1,25 @@
-// TODO: cache + recursion
+function addToProp(obj, propName, amount) {
+  let newProp = (obj[propName] || 0) + amount
+  return {
+    ...obj,
+    ...{ [propName]: newProp }
+  }
+}
+
+let getFactorsCache = {}
+
 function getFactors (n) {
+  if (n in getFactorsCache) return getFactorsCache[n]
+  if (n < 1) return { } // Nothing
+  if (1 <= n && n <= 3) return { [n]: 1 } // there is one 1 or 2 or 3
   let factors = {}
-  let i = 1
-  while (n > 1) {
+  for (let i = 2; ; i++) {
     if (n % i === 0) {
-      factors[i] = (factors[i] || 0) + 1
-      n /= i
-      i = 2
-    } else {
-      i++
+      let result = addToProp(getFactors(n / i), i, 1)
+      getFactorsCache[n] = result
+      return result
     }
   }
-  return factors
 }
 
 function smallestMult(n) {
