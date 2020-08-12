@@ -132,6 +132,7 @@ footer {
 
 footer div {
   margin: auto;
+  max-width: 90%; /* fix for 21:9 devices */
   text-align: center;
 }
 
