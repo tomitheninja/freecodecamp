@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rosarivo:ital@1&display=swap');
+
+:root {
+  --footer-height: 96px;
+  --footer-margin-top: 30px;
+  --main-vmargin: 20px;
+}
+
+body {
+  font-size: 1.05em;
+  margin: 0px;
+}
+
+#main {
+  margin: var(--main-vmargin) 50px;
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  grid-row-gap: 0;
+  grid-column-gap: 50px; 
+  grid-template-areas:
+    "title img"
+    "text img"
+    "text img"
+    "text quote";
+  min-height: calc(100vh - var(--footer-height) - var(--footer-margin-top) - var(--main-vmargin));
+}
+
+@media (max-width: 992px) {
+  #main {
+    grid-template-areas:
+      "title"
+      "text"
+      "text"
+      "text"
+      "img"
+      "quote";
+    grid-template-columns: 1fr;
+    margin: 10px 0px; /* text has it's own margin */
+ }
+ 
+  #tribute-info > article {
+    width: unset !important;
+  }
+  
+  #quote {
+    font-size: 1.1em;
+    margin-top: 20px;
+    text-align: center !important;
+  }
+}
+
+#title {
+  grid-area: title;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  font-feature-settings: 'cpsp' on;
+  text-transform: uppercase;
+  color: #264653;
+  font-size: 36px;
+  text-shadow: 0px 4px 4px rgba(38, 70, 83, 0.25);
+  margin-bottom: 0;
+}
+
+#img-div {
+  grid-area: img;
+  margin: auto;
+}
+
+#image {
+  display: block;
+  height: auto;
+  width: 90%;
+  max-width: 100%;
+  margin: auto;
+}
+
+#tribute-info > article {
+  place-self: center;
+  width: 45vw;
+  text-align: justify;
+  font-family: Roboto, sans-serif;
+}
+
+#tribute-info > article > h2 { /* article title */
+  text-align: center;
+  text-decoration-line: underline;
+}
+
+#tribute-info > article > p {
+  /*font-size: 18px;*/
+}
+
+#tribute-info {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #eee; */
+  border-radius: 10px;
+  padding: 10px 30px;
+  margin: auto;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+#quote {
+  font-size: 1.1em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: right;
+  grid-area: quote;
+  font-style: italic;
+  font-family: Rosarivo;
+}
+
+#quote > div {
+  margin: auto;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  background-color: #F2F2F2;
+  min-height: var(--footer-height);
+  place-content: center center;
+  margin-top: var(--footer-margin-top);
+  font-size: 21px;
+  font-style: italic;
+}
+
+footer div {
+  margin: auto;
+  text-align: center;
+}
+
+footer a, footer a:hover {
+  color: unset !important;
+}
+
+footer a:hover {
+  background-color: rgba(50, 50, 200, 0.2);
+}
+
