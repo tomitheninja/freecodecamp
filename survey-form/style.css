@@ -1,0 +1,181 @@
+#root {
+  --horizontal-padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: 480px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* It just looks better with the extra pixel */
+  margin: auto calc(var(--horizontal-padding) + 1px);
+}
+header #title {
+  font-size: 28px;
+}
+
+header img {
+  --size: 48px;
+  width: var(--size);
+  height: var(--size);
+}
+
+#description {
+  text-align: justify;
+  margin-left: var(--horizontal-padding);
+}
+
+form#survey-form {
+  --text-area-border-width: 1px;
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: var(--horizontal-padding);
+}
+
+form .form-group {
+  --vertical-margin: 20px;
+}
+
+form label {
+  margin: 3px 0px;
+}
+
+form .form-group:not(:first-of-type) {
+  margin-top: var(--vertical-margin);
+}
+
+form .form-group:not(:last-of-type) {
+  margin-bottom: var(--vertical-margin);
+}
+
+form .form-group > * {
+  display: block;
+}
+
+.form-row > * {
+  display: inline !important;
+  width: unset;
+}
+
+:not(.form-row):not(.form-item) > input,
+:not(.form-row):not(.form-item) > select,
+:not(.form-row):not(.form-item) > textarea {
+  width: calc(100% - var(--horizontal-padding));
+}
+.form-item > * {
+  display: inline;
+}
+
+form textarea {
+  min-height: 200px;
+}
+
+#survey-form:not(.with-js) nav {
+  display: none !important;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto 15px 25px 15px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none !important;
+}
+
+nav a > * {
+  display: block !important;
+  text-align: center;
+}
+
+nav i.fas {
+  /*color: black;*/
+  font-size: 32px;
+}
+
+form.with-js nav a {
+  opacity: 1;
+}
+
+form.with-js nav a:not(:focus) {
+  opacity: 0.4;
+}
+
+form.with-js nav a:hover {
+  opacity: 0.6;
+  transition: opacity 1.25s ease-out;
+}
+
+/* -- user -- */
+form.with-js.page-user #user-link {
+  opacity: 1;
+}
+form.with-js.page-user .form-page:not(#user-page) {
+  display: none;
+}
+
+/* -- experience -- */
+form.with-js.page-experience #experience-link {
+  opacity: 1;
+}
+form.with-js.page-experience .form-page:not(#experience-page) {
+  display: none;
+}
+
+/* -- summary -- */
+form.with-js.page-summary #summary-link {
+  opacity: 1;
+}
+form.with-js.page-summary .form-page:not(#summary-page) {
+  display: none;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0px;
+}
+
+.change-page-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+@media only screen and (min-width: 900px) {
+  .change-page-buttons {
+    /* margin-left: 50px;
+    margin-right: 50px;*/
+  }
+}
+
+.change-page-buttons > * {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: green;
+  color: black;
+  text-decoration: none;
+}
+
+.change-page-buttons > * > *:first-child {
+  margin-right: 5px;
+}
+
+form textarea {
+  margin-top: 2px;
+  padding: 5px;
+  border-width: var(--text-area-border-width);
+}
+
+form #submit {
+  border-radius: 1px;
+  background-color: green;
+  padding: 10px 0px 10px 0px;
+  margin-top: 20px;
+  width: calc(100% - 10px - 2 * --text-area-border-width);
+}

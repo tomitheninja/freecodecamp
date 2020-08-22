@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="script.js" defer></script>
+  </head>  
+<div id="root">
+  <header>
+    <h1 id="title">FreeCodeCamp survey</h1>
+    <img src="https://assets.codepen.io/260521/internal/avatars/users/default.png?format=auto&amp;version=1583682823&amp;width=128&amp;height=128" />
+  </header>
+  <p id="description">Thank you for taking the time to help us improve the platform</p>
+  <form class="page-user" id="survey-form">
+    <nav>
+      <a id="user-link" href="#">
+        <i class="fas fa-user"></i>
+        <span>about you</span>
+      </a>
+      <a id="experience-link" href="#">
+        <i class="fas fa-star"></i>
+        <span>experience</span>
+      </a>
+      <a id="summary-link" href="#">
+        <i class="fas fa-pen"></i>
+        <span>summary</span>
+      </a>
+    </nav>
+    <div class="form-page" id="user-page">
+      <h2>About you</h2>
+      <div class="form-group">
+        <label id="name-label" for="name">Name</label>
+        <input id="name" type="text" required="required" />
+      </div>
+      <div class="form-group">
+        <label id="email-label" for="email">Email</label>
+        <input id="email" type="email" required="required" />
+      </div>
+      <div class="form-group">
+        <label id="age-label" for="age">Age (optional)</label>
+        <input id="number" type="number" name="age" min="14" max="120" />
+      </div>
+    </div>
+    <div class="form-page" id="experience-page">
+      <h2>User experience</h2>
+      <div class="form-group">
+        <label id="role-label" for="role">Which option best describes your current role?</label>
+        <select id="dropdown" required="required">
+          <option disabled="disabled" selected="selected">Select current role</option>
+          <option value="student">Student</option>
+          <option value="job">Full Time Job</option>
+          <option value="learner">Full Time Learner</option>
+          <option value="preferNo">Prefer not to say</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <p class="no-bottom-margin">Would you recommend FreeCodeCamp to a friend?</p>
+        <div class="form-row">
+          <input id="definitely" type="radio" name="recommend" value="definitely" />
+          <label for="definitely">Definitely</label>
+        </div>
+        <div class="form-row">
+          <input id="maybe" type="radio" name="recommend" value="maybe" />
+          <label for="maybe">Maybe</label>
+        </div>
+        <div class="form-row">
+          <input id="not-sure" type="radio" name="recommend" value="not-sure" />
+          <label for="not-sure">Not sure</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="favorite">What is your favorite feature of FreeCodeCamp?</label>
+        <select id="favorite" name="favorite" required="required">
+          <option disabled="disabled" selected="selected">My favorite feature is ...</option>
+          <option value="challenges">Challenges</option>
+          <option value="projects">Projects</option>
+          <option value="community">Community</option>
+          <option value="open-source">Open Source</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-page" id="summary-page">
+      <h2>Summary</h2>
+      <div class="form-group">
+        <p class="no-bottom-margin">What would you like to see improved? (Check all that apply)</p>
+        <div class="form-item">
+          <input id="front-end-projects" type="checkbox" value="front-end-projects" name="favorite" />
+          <label for="front-end-projects">Front-end Projects</label>
+        </div>
+        <div class="form-item">
+          <input id="back-end-projects" type="checkbox" value="back-end-projects" name="favorite" />
+          <label for="back-end-projects">Back-end Projects</label>
+        </div>
+        <div class="form-item">
+          <input id="data-visualization" type="checkbox" value="data-visualization" name="favorite" />
+          <label for="data-visualization">Data Visualization</label>
+        </div>
+        <div class="form-item">
+          <input id="challenges" type="checkbox" value="challenges" name="favorite" />
+          <label for="challenges">Challenges</label>
+        </div>
+        <div class="form-item">
+          <input id="open-source-community" type="checkbox" value="open-source-community" name="favorite" />
+          <label for="open-source-community">Open Source Community</label>
+        </div>
+        <div class="form-item">
+          <input id="gitter-help-rooms" type="checkbox" value="gitter-help-rooms" name="favorite" />
+          <label for="gitter-help-rooms">Gitter help rooms</label>
+        </div>
+        <div class="form-item">
+          <input id="videos" type="checkbox" value="videos" name="favorite" />
+          <label for="videos">Videos</label>
+        </div>
+        <div class="form-item">
+          <input id="city-meetups" type="checkbox" value="city-meetups" name="favorite" />
+          <label for="city-meetups">City Meetups</label>
+        </div>
+        <div class="form-item">
+          <input id="wiki" type="checkbox" value="wiki" name="favorite" />
+          <label for="wiki">Wiki</label>
+        </div>
+        <div class="form-item">
+          <input id="forum" type="checkbox" value="forum" name="favorite" />
+          <label for="forum">Forum</label>
+        </div>
+        <div class="form-item">
+          <input id="additional-courses" type="checkbox" value="additional-courses" name="favorite" />
+          <label for="additional-courses">Additional Courses</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="no-bottom-margin">Any comments or suggestions?</p>
+        <textarea id="comments" name="comment" placeholder="It would be great if .."></textarea>
+      </div>
+      <input id="submit" type="submit" />
+    </div>
+    <div class="change-page-buttons">
+      <a id="prev-page" href="#">
+        <i class="fas fa-angle-left"></i>
+        <span>Prev page</span>
+      </a>
+      <a id="next-page" href="#">
+        <span>Next page</span>
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+  </form>
+</div>
