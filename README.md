@@ -6,9 +6,9 @@
 
 ### Responsive Web Design
 
-Tribute Page
+[Tribute Page](https://codepen.io/tomitheninja/full/eYZNZeg)
 
-Survey Form
+[Survey Form](https://codepen.io/tomitheninja/full/ZEWOZeK)
 
 Product Landing Page
 
