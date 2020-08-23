@@ -9,7 +9,7 @@ formEl.classList.add("with-js");
 const formPages = {
   user: "page-user",
   experience: "page-experience",
-  summary: "page-summary"
+  summary: "page-summary",
 };
 
 let currentFormPage = "";
