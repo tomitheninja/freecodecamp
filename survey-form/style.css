@@ -1,10 +1,13 @@
 #root {
+  --main-color: green;
+  --fcc-color: rgb(0, 100, 0);
   --horizontal-padding: 20px;
+  --textarea-border-width: 1px;
 
   display: flex;
   flex-direction: column;
 
-  max-width: 480px;
+  width: min(480px, 90%);
   margin: auto;
 }
 
@@ -31,8 +34,7 @@ header img {
 }
 
 form#survey-form {
-  --text-area-border-width: 1px;
-  border: 1px solid green;
+  border: 1px solid var(--fcc-color);
   border-radius: 5px;
   padding: var(--horizontal-padding);
 }
@@ -81,7 +83,9 @@ form textarea {
 
 nav {
   display: flex;
+  gap: 5px;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   margin: auto 15px 25px 15px;
 }
 
@@ -96,8 +100,8 @@ nav a > * {
 }
 
 nav i.fas {
-  /*color: black;*/
   font-size: 32px;
+  margin-bottom: 3px;
 }
 
 form.with-js nav a {
@@ -147,17 +151,10 @@ form.with-js.page-summary .form-page:not(#summary-page) {
   margin-top: 30px;
 }
 
-@media only screen and (min-width: 900px) {
-  .change-page-buttons {
-    /* margin-left: 50px;
-    margin-right: 50px;*/
-  }
-}
-
 .change-page-buttons > * {
   border-radius: 5px;
   padding: 10px;
-  background-color: green;
+  background-color: var(--main-color);
   color: black;
   text-decoration: none;
 }
@@ -169,13 +166,13 @@ form.with-js.page-summary .form-page:not(#summary-page) {
 form textarea {
   margin-top: 2px;
   padding: 5px;
-  border-width: var(--text-area-border-width);
+  border-width: var(--textarea-border-width);
 }
 
 form #submit {
   border-radius: 1px;
-  background-color: green;
+  background-color: var(--main-color);
   padding: 10px 0px 10px 0px;
   margin-top: 20px;
-  width: calc(100% - 10px - 2 * --text-area-border-width);
+  width: calc(100% - 10px + 2 * var(--textarea-border-width));
 }
